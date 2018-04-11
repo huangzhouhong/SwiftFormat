@@ -43,8 +43,9 @@ class FormatEntireFileCommand: NSObject, XCSourceEditorCommand {
         let tokens = tokenize(sourceToFormat)
 
         // Infer format options
-        var options = inferOptions(from: tokens)
-        options.indent = indentationString(for: invocation.buffer)
+//        var options = inferOptions(from: tokens)
+//        options.indent = indentationString(for: invocation.buffer)
+        let options = FormatOptions()
 
         do {
             let rules = FormatRules.all(named:
